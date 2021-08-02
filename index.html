@@ -19,10 +19,18 @@
                 text-align: right;
             }
             .week {
-                width: 0.83vw;
-                height: 0.83vw;
                 border: 1px solid grey;
                 border-radius: 2px;
+                padding: 0.4rem;
+            }
+
+            @media screen and (max-width: 414px) {
+                #memento-grid {
+                    gap: 0.075rem;
+                }
+                .week {
+                    padding: 0.5rem 2px;
+                }
             }
         </style>
     </head>
@@ -5940,6 +5948,11 @@
             // Functions
             (function init() {
 
+                // Responsive stuff
+                if (window.innerWidth <= 414) {
+                    monthNames = monthNames.map(mN => mN[0]);
+                }
+
                 // Events
                 birthDateSubmit.addEventListener("click", birthDateSubmitHandler);
                 birthDateReset.addEventListener("click", birthDateResetHandler);
@@ -6008,7 +6021,13 @@
             function paintBoxes() {
 
                 // Search for the month element
-                var yearElement = [...document.querySelectorAll(".year")][currentYear - birthYear - 1];
+                var deltaYears = currentYear - birthYear;
+                var yearElement = [...document.querySelectorAll(".year")]
+                    [
+                        (deltaYears > 0)
+                            ? deltaYears - 1
+                            : deltaYears
+                    ]; // This is just some OCD
                 var monthElement = yearElement.nextElementSibling;
                 var monthOffset = (currentMonth >= birthMonth)
                     ? currentMonth - birthMonth
