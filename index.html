@@ -36,14 +36,14 @@
             #memento-grid {
                 display: grid;
                 grid-template-rows: repeat(81, 1.5rem);
-                grid-template-columns: 9ch repeat(12, 1fr);
+                grid-template-columns: 7ch repeat(12, 1fr);
                 gap: 0.15rem;
             }
             .year {
                 text-align: right;
             }
             .week {
-                border: 1px solid grey;
+                background: #ddd;
                 border-radius: 2px;
                 padding: 0.4rem;
             }
@@ -53,7 +53,7 @@
                     gap: 0.075rem;
                 }
                 .week {
-                    padding: 0.5rem 2px;
+                    padding: 0.1rem 0.1rem;
                 }
             }
         </style>
@@ -6033,7 +6033,7 @@
                 years.map((y, i) => {
                     y.innerHTML = birthYear + i;
                     y.innerHTML += (birthMonth !== 0)
-                        ? '-' + (birthYear + i + 1)
+                        ? '-' + (birthYear + i + 1).toString().slice(2, 4)
                         : '';
                 });
             }
