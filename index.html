@@ -9,6 +9,30 @@
         <title>Memento Mori Calendar</title>
 
         <style>
+            header,
+            #birth-date,
+            #reset {
+                background-size: 10rem;
+                background-repeat: no-repeat;
+            }
+            header {
+                background-image: url(head.png);
+                background-position: 98% 98%;
+            }
+            #birth-date {
+                background-image: url(hourglass.png);
+                background-position: 50% 17%;
+            }
+            #reset {
+                background-image: url(bones.png);
+                background-position: center;
+            }
+            input[type="date"] {
+                background: #fff;
+                border: 1px solid #ccc;
+                padding: 4px;
+                border-radius: 4px;
+            }
             #memento-grid {
                 display: grid;
                 grid-template-rows: repeat(81, 1.5rem);
@@ -37,7 +61,7 @@
     <body>
 
         <div class="col-lg-10 col-xl-8 mx-auto py-5 px-3 d-grid gap-5">
-            <header>
+            <header class="p-4 border rounded-3">
                 <h1 class="display-6 text-capitalize mb-5 text-center">Memento mori</h1>
                 <figure>
                     <blockquote class="blockquote">
@@ -49,16 +73,16 @@
                 </figure>
             </header>
             <section class="d-flex justify-content-center">
-                <div class="d-inline-flex flex-column gap-3 border rounded-3 p-5">
+                <div id="birth-date" class="d-inline-flex flex-column gap-3 border rounded-3 p-5">
                     <label class="text-center" for="birth-date-input">Enter your birth date</label>
                     <input type="date" id="birth-date-input">
-                    <button class="btn btn-outline-primary" id="birth-date-submit">Submit</button>
+                    <button class="btn btn-outline-secondary" id="birth-date-submit">Submit</button>
                 </div>
             </section>
             <section class="d-none d-flex justify-content-center">
-                <div class="d-inline-flex flex-column gap-3 border rounded-3 p-5">
+                <div id="reset" class="d-inline-flex flex-column gap-3 border rounded-3 p-5">
                     <label class="text-center" for="birth-date-input">Do you want to reset?</label>
-                    <button class="btn btn-outline-primary" id="birth-date-reset">Reset</button>
+                    <button class="btn btn-outline-secondary" id="birth-date-reset">Reset</button>
                 </div>
             </section>
             <section class="d-none" id="memento-grid">
