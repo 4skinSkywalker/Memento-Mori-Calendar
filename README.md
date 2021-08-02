@@ -43,6 +43,7 @@
 [![Screenshot][screenshot]](https://github.com/4skinSkywalker/Memento-Mori-Calendar)
 
 Memento mori, translated from Latin, means “remember you have to die.” Memento Mori is a powerful concept that's been used for centuries to help people focus on what truly matters.
+This web app is a calendar that shows you how many "days" you have left (respect the average life expectancy).
 
 ### Built With
 
