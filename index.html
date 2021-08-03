@@ -37,7 +37,6 @@
                 display: grid;
                 grid-template-rows: repeat(81, 1.5rem);
                 grid-template-columns: 4ch repeat(12, 1fr) 4ch;
-                gap: 0.15rem;
             }
             .week {
                 background: #ddd;
@@ -46,9 +45,6 @@
             }
 
             @media screen and (max-width: 415px) {
-                #memento-grid {
-                    gap: 0.075rem;
-                }
                 .week {
                     padding: 0.1rem 0.1rem;
                 }
@@ -6108,7 +6104,6 @@
             function setYearLabels() {
                 years.map((y, i) => y.innerHTML = birthYear + i);
                 years[0] = birthYear;
-                console.log(years.length);
                 for (let i = 1, j = 1; i < years.length - 1; j++, i += 2) {
                     years[i].innerHTML = birthYear + j;
                     years[i + 1].innerHTML = birthYear + j;
